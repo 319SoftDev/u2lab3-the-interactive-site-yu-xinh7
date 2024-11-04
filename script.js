@@ -33,14 +33,14 @@ const checkNumber = (e) => {
     const value = e.target.valueAsNumber;
     
     // Insert conditional code here.
-    if (value == 50){
-        numOutput.innerHTML="Not 50, guess lower!";
-    } else if (value == 30){
-        numOutput.innerHTML="Not 50, guess higher!";
-    } else if (value == 12){
-        numOutput.innerHTML="Not 50, guess higher!";
-    }
-}
+    if (value> randomNumber){
+        numOutput.innerHTML='Not'+              value    +'guess lower!';
+    } else if (value < randomNumber){
+        numOutput.innerHTML='Not'+      value    +'guess higher!';
+    } else if (value == randomNumber){
+        numOutput.innerHTML='Hurray you got it! It is!' +        value;
+    };
+};
 
 numInput.addEventListener('change', checkNumber);
 
