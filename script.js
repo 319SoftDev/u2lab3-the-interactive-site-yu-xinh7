@@ -31,7 +31,6 @@ const numOutput = document.querySelector("#num-output");
 const checkNumber = (e) => {
     // the inputted number (as an integer not as a string)
     const value = e.target.valueAsNumber;
-    
     // Insert conditional code here.
     if (value> randomNumber){
         numOutput.innerHTML='Not'+              value    +'guess lower!';
@@ -60,3 +59,15 @@ const checkContinent = (e) => {
         if (!guessedContinents.includes(formattedInput)) {
             guessedContinents.push(formattedInput);
             textOutput.innerHTML = `yes, ${formattedInput} is a continent. ${guessedContinents.length} out of 7`;
+         const imgElement = document.querySelector(`img[alt="${formattedInput}"]`);
+        if (imgElement) {
+            imgElement.classList.remove("hidden");
+            }
+        } else {
+            textOutput.innerHTML = `${formattedInput} has already been selected.`;
+        }
+    } else {
+        textOutput.innerHTML = `${formattedInput} is not a continent.`;
+    }
+};
+textInput.addEventListener('change', checkContinent);
