@@ -46,3 +46,17 @@ numInput.addEventListener('change', checkNumber);
 
 // is_dark(hex) - takes in a hex number (for example #123456) and returns true if it's dark and false if it's light.
 
+const textInput = document.querySelector("#text-input");
+const textOutput = document.querySelector("#sr-continent-alert");
+
+// Part 3 ---->
+const continents = ["North America", "Europe", "Asia", "South America", "Africa", "Australia", "Antarctica"];
+let guessedContinents = [];
+const checkContinent = (e) => {
+    const input = e.target.value.trim().toLowerCase();  
+    e.target.value = '';  
+    const formattedInput = input.charAt(0).toUpperCase() + input.slice(1);
+    if (continents.includes(formattedInput)) {
+        if (!guessedContinents.includes(formattedInput)) {
+            guessedContinents.push(formattedInput);
+            textOutput.innerHTML = `yes, ${formattedInput} is a continent. ${guessedContinents.length} out of 7`;
