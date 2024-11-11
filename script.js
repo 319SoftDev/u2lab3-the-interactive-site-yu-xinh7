@@ -1,7 +1,6 @@
 // YOUR CODE HERE --> PART 1
 const radioInput = document.querySelector("#fav_color");
 const radioOutput = document.querySelector("#radio-output");
-
 const displayColor = (e) => {
     //the color that was selected
     const color = e.target.value;
@@ -13,21 +12,15 @@ const displayColor = (e) => {
         radioOutput.innerHTML="Pink - You picked pink 💕";
     } else if (color=='black') {
         radioOutput.innerHTML="Black - You picked black 🖤";
-    }
-   
+    }  
 };
-
 radioInput.addEventListener('change', displayColor);
-
 // PART 2 ----->
 // getRandomInt() - gets a random number between 1 and 100
 const randomNumber = getRandomInt();
 console.log(randomNumber);
-
-
 const numInput = document.querySelector("#num-input");
 const numOutput = document.querySelector("#num-output");
-
 const checkNumber = (e) => {
     // the inputted number (as an integer not as a string)
     const value = e.target.valueAsNumber;
@@ -62,10 +55,8 @@ const checkContinent = (e) => {
          const imgElement = document.querySelector(`img[alt="${formattedInput}"]`);
         if (imgElement) {
             imgElement.classList.remove("hidden");
-            }
         } else {
             textOutput.innerHTML = `${formattedInput} has already been selected.`;
-        }
     } else {
         textOutput.innerHTML = `${formattedInput} is not a continent.`;
     }
